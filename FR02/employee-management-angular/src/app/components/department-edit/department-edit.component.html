@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Edit Department</h2>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Name" [(ngModel)]="department.name" name="name" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Location" [(ngModel)]="department.location" name="location" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Update</button>
+  </form>
+</div>

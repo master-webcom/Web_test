@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Add Employee</h2>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Name" [(ngModel)]="employee.name" name="name" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" [(ngModel)]="employee.email" name="email" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Phone" [(ngModel)]="employee.phone" name="phone" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Salary" [(ngModel)]="employee.salary" name="salary" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Department ID" [(ngModel)]="employee.departmentId" name="departmentId" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+</div>

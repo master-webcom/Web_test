@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Department List</h2>
+  <button mat-raised-button color="primary" routerLink="/departments/add">Add Department</button>
+  <table mat-table [dataSource]="departments" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let department">{{ department.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef>Location</th>
+      <td mat-cell *matCellDef="let department">{{ department.location }}</td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let department">
+        <button mat-button color="primary" (click)="editDepartment(department.departmentId)">Edit</button>
+        <button mat-button color="warn" (click)="deleteDepartment(department.departmentId)">Delete</button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['name', 'location', 'actions']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name', 'location', 'actions']"></tr>
+  </table>
+</div>
